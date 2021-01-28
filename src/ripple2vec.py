@@ -90,13 +90,13 @@ class Graph():
 				ripple_part = {}
 				for key in c:
 					ripple_part[key] = rippleList[key]
-				logging.info("Executing sort part {}...".format(part))
+				logging.info("Executing split the hitting time vector to different layers of part {}...".format(part))
 				job = executor.submit(splitHittingTime,c,ripple_part)
 				futures[job] = part
 				part += 1
 
 
-			logging.info("Receiving results of sort...")
+			logging.info("Receiving results of split the hitting time...")
 			for job in as_completed(futures):
 				k_hitting_list = job.result()
 				for i in range(len(k_hitting_list)):
@@ -118,7 +118,7 @@ class Graph():
 		with ProcessPoolExecutor(max_workers = w) as executor:
 			part = 1
 			for c in chunks:
-				logging.info("Executing sort part {}...".format(part))
+				logging.info("Executing sort hitting time of part {}...".format(part))
 				job = executor.submit(sortHittingTime,hitting_k_list[c[0]:c[len(c)-1]+1],c)
 				futures[job] = part
 				part += 1
@@ -134,24 +134,24 @@ class Graph():
 
 		chunks = partition(vertices,parts)
 		futures = {}
-		t2 = time()
+		t1 = time()
+		logging.info('Splitting and sortting the hitting time cost. Time: {}s'.format((t1-t0)))
 		with ProcessPoolExecutor(max_workers = self.workers) as executor:
 			part = 1
 			for c in chunks:
-				logging.info("Executing sort part {}...".format(part))
+				logging.info("Executing find the top k nearest nodes of part {}...".format(part))
 				job = executor.submit(findNeighborK,c,self.G,self.node_layer,sorted_hitting_list,hitting_map_list,part,self.max_depth,self.method)
 				futures[job] = part
 				part += 1
 
 
-			logging.info("Receiving results of sort...")
+			logging.info("Receiving results of top k...")
 			for job in as_completed(futures):
 				job.result()
 				r = futures[job]
 				logging.info("Part {} Completed.".format(r))
-		t1 = time()
-		logging.info('OPT1 cost. Time: {}s'.format((t1-t0)))
-		logging.info('OPT1 cost2. Time: {}s'.format((t1-t2)))
+		t2 = time()
+		logging.info('Find top k nodes cost. Time: {}s'.format((t1-t2)))
 
 	def calc_distances_all_vertices(self):
     

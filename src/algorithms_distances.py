@@ -139,7 +139,7 @@ def getRippleList(g,weight, root, calcUntilLayer,mDgree):
         if(calcUntilLayer == depth):
             break
     t1 = time()
-    #logging.info('BFS vertex {}. Time: {}s'.format(root,(t1-t0)))
+    logging.info('BFS vertex {}. Time: {}s'.format(root,(t1-t0)))
 
 
     return vector
@@ -266,7 +266,7 @@ def getRippleList2(g,weight, root, calcUntilLayer,mDgree):
                 break
 
     t1 = time()
-    #logging.info('BFS vertex {}. Time: {}s'.format(root,(t1-t0)))
+    logging.info('BFS vertex {}. Time: {}s'.format(root,(t1-t0)))
 
     return vector
 
