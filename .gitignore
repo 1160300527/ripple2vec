@@ -1,8 +1,0 @@
-*.txt
-!karate.txt
-.vscode/
-*.pyc
-*.emb
-*.log
-*.md
-pickles/*
