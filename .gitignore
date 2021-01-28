@@ -1,0 +1,11 @@
+*.txt
+!karate.txt
+.vscode/
+test.py
+pickles/
+graph/
+emb/
+*.pyc
+*.emb
+*.log
+*.md
