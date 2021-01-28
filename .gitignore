@@ -1,0 +1,7 @@
+*.txt
+!karate.txt
+.vscode/
+*.pyc
+*.log
+*.md
+pickles/*
