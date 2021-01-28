@@ -5,3 +5,4 @@
 *.emb
 *.log
 *.md
+pickles/*
