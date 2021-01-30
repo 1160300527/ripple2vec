@@ -298,19 +298,19 @@ def preprocess_degreeLists():
 
     dList = {}
     dFrequency = {}
-    for v,layers in degreeList.iteritems():
+    for v,layers in degreeList.items():
         dFrequency[v] = {}
-        for layer,degreeListLayer in layers.iteritems():
+        for layer,degreeListLayer in layers.items():
             dFrequency[v][layer] = {}
             for degree in degreeListLayer:
                 if(degree not in dFrequency[v][layer]):
                     dFrequency[v][layer][degree] = 0
                 dFrequency[v][layer][degree] += 1
-    for v,layers in dFrequency.iteritems():
+    for v,layers in dFrequency.items():
         dList[v] = {}
-        for layer,frequencyList in layers.iteritems():
+        for layer,frequencyList in layers.items():
             list_d = []
-            for degree,freq in frequencyList.iteritems():
+            for degree,freq in frequencyList.items():
                 list_d.append((degree,freq))
             list_d.sort(key=lambda x: x[0])
             dList[v][layer] = np.array(list_d,dtype='float')
@@ -557,8 +557,8 @@ def generate_distances_network_part1(workers):
         logging.info('Executing part {}...'.format(part))
         distances = restoreVariableFromDisk('distances-'+str(part))
         
-        for vertices,layers in distances.iteritems():
-            for layer,distance in layers.iteritems():
+        for vertices,layers in distances.items():
+            for layer,distance in layers.items():
                 vx = vertices[0]
                 vy = vertices[1]
                 if(layer not in weights_distances):
@@ -567,7 +567,7 @@ def generate_distances_network_part1(workers):
 
         logging.info('Part {} executed.'.format(part))
 
-    for layer,values in weights_distances.iteritems():
+    for layer,values in weights_distances.items():
         saveVariableOnDisk(values,'weights_distances-layer-'+str(layer))
     return
 
@@ -578,8 +578,8 @@ def generate_distances_network_part2(workers):
 
         logging.info('Executing part {}...'.format(part))
         distances = restoreVariableFromDisk('distances-'+str(part))
-        for vertices,layers in distances.iteritems():
-            for layer,distance in layers.iteritems():
+        for vertices,layers in distances.items():
+            for layer,distance in layers.items():
                 vx = vertices[0]
                 vy = vertices[1]
                 if(layer not in graphs):
@@ -592,7 +592,7 @@ def generate_distances_network_part2(workers):
                 graphs[layer][vy].append(vx)
         logging.info('Part {} executed.'.format(part))
 
-    for layer,values in graphs.iteritems():
+    for layer,values in graphs.items():
         saveVariableOnDisk(values,'graphs-layer-'+str(layer))
 
     return
@@ -609,7 +609,7 @@ def generate_distances_network_part3():
         alias_method_q = {}
         weights = {}
     
-        for v,neighbors in graphs.iteritems():
+        for v,neighbors in graphs.items():
             e_list = deque()
             sum_w = 0.0
 

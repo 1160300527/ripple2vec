@@ -22,7 +22,7 @@ def generate_parameters_random_walk(workers):
         logging.info('Executing layer {}...'.format(layer))            
         weights = restoreVariableFromDisk('distances_nets_weights-layer-'+str(layer))
     
-        for k,list_weights in weights.iteritems():
+        for k,list_weights in weights.items():
             if(layer not in sum_weights):
                 sum_weights[layer] = 0
             if(layer not in amount_edges):
@@ -51,7 +51,7 @@ def generate_parameters_random_walk(workers):
 
         amount_neighbours[layer] = {}
 
-        for k,list_weights in weights.iteritems():
+        for k,list_weights in weights.items():
             cont_neighbours = 0
             for w in list_weights:
                 if(w > average_weight[layer]):
@@ -69,7 +69,6 @@ def chooseNeighbor(v,graphs,alias_method_j,alias_method_q,layer):
 
     idx = alias_draw(alias_method_j[layer][v],alias_method_q[layer][v])
     v = v_list[idx]
-
     return v
 
 
@@ -88,23 +87,26 @@ def exec_random_walk(graphs,alias_method_j,alias_method_q,v,walk_length,amount_n
 
     while len(path) < walk_length:
         r = random.random()
-
-        if(r < 0.3):
+        if(v in graphs[layer]):
+            if(r < 0.3):
                 v = chooseNeighbor(v,graphs,alias_method_j,alias_method_q,layer)
                 path.append(v)
 
-        else:
-            r = random.random()
-            limiar_moveup = prob_moveup(amount_neighbours[layer][v])
-            if(r > limiar_moveup):
-                if(layer > initialLayer):
-                    layer = layer - 1           
             else:
-                if((layer + 1) in graphs and v in graphs[layer + 1]):
-                    layer = layer + 1
+                r = random.random()
+                if(v in amount_neighbours[layer]):
+                    limiar_moveup = prob_moveup(amount_neighbours[layer][v])
+                    if(r > limiar_moveup):
+                        if(layer > initialLayer):
+                            layer = layer - 1           
+                    else:
+                        if((layer + 1) in graphs and v in graphs[layer + 1] and v in amount_neighbours[layer+1]):
+                            layer = layer + 1
+        else:
+            layer = layer - 1 
 
     t1 = time()
-    #logging.info('RW - vertex {}. Time : {}s'.format(original_v,(t1-t0)))
+    logging.info('RW - vertex {}. Time : {}s'.format(original_v,(t1-t0)))
 
     return path
 

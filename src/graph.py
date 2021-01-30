@@ -78,7 +78,7 @@ class Graph(defaultdict):
 
   def gToDict(self):
     d = {}
-    for k,v in self.iteritems():
+    for k,v in self.items():
       d[k] = v
     return d
 
