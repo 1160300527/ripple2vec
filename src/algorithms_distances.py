@@ -267,7 +267,6 @@ def getRippleList2(g,weight, root, calcUntilLayer,mDgree):
 
     t1 = time()
     logging.info('BFS vertex {}. Time: {}s'.format(root,(t1-t0)))
-
     return vector
 
 def cost(a,b):
@@ -441,6 +440,7 @@ def algorithms_ripple(distance,d,layer,max_layer,method):
     if(method == 1):
         return distance+d*(layer+1)
     if(method==3):
+        return distance+d
         if(layer<4):
             w = 20
         else:

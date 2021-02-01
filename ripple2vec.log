@@ -1,133 +1,33 @@
-2021-01-30 17:53:52,857  - Loading graph...
-2021-01-30 17:53:52,862  - Graph loaded.
-2021-01-30 17:53:52,862  - Converting graph to dict...
-2021-01-30 17:53:52,862 Graph converted.
-2021-01-30 17:53:52,863 Graph - Number of vertices: 131
-2021-01-30 17:53:52,863 Graph - Number of edges: 1038.5
-2021-01-30 17:53:59,440 Recovering variable...
-2021-01-30 17:53:59,442 Variable recovered. Time: 1.6677379608154298e-05m
-2021-01-30 17:53:59,442 Recovering variable...
-2021-01-30 17:53:59,443 Variable recovered. Time: 1.6697247823079427e-05m
-2021-01-30 17:53:59,444 Executing sort part 1...
-2021-01-30 17:53:59,492 Executing sort part 2...
-2021-01-30 17:53:59,492 Executing sort part 3...
-2021-01-30 17:53:59,493 Executing sort part 4...
-2021-01-30 17:53:59,493 Receiving results of sort...
-2021-01-30 17:54:02,154 Part 1 Completed.
-2021-01-30 17:54:02,156 Part 2 Completed.
-2021-01-30 17:54:02,157 Part 3 Completed.
-2021-01-30 17:54:02,157 Part 4 Completed.
-2021-01-30 17:54:02,473 Executing sort part 1...
-2021-01-30 17:54:02,499 Executing sort part 2...
-2021-01-30 17:54:02,499 Executing sort part 3...
-2021-01-30 17:54:02,499 Executing sort part 4...
-2021-01-30 17:54:02,499 Receiving results of sort...
-2021-01-30 17:54:05,095 Part 1 Completed.
-2021-01-30 17:54:05,096 Part 2 Completed.
-2021-01-30 17:54:05,097 Part 3 Completed.
-2021-01-30 17:54:05,097 Part 4 Completed.
-2021-01-30 17:54:05,423 Executing sort part 1...
-2021-01-30 17:54:05,450 Executing sort part 2...
-2021-01-30 17:54:05,451 Executing sort part 3...
-2021-01-30 17:54:05,451 Executing sort part 4...
-2021-01-30 17:54:05,451 Receiving results of sort...
-2021-01-30 17:54:08,056 Part 1 Completed.
-2021-01-30 17:54:08,077 Part 2 Completed.
-2021-01-30 17:54:08,095 Part 3 Completed.
-2021-01-30 17:54:08,117 Part 4 Completed.
-2021-01-30 17:54:08,383 OPT1 cost. Time: 8.939997911453247s
-2021-01-30 17:54:08,383 OPT1 cost2. Time: 2.961003303527832s
-2021-01-30 17:54:24,782 Loading distances_nets on disk...
-2021-01-30 17:54:24,782 Recovering variable...
-2021-01-30 17:54:24,789 Variable recovered. Time: 0.00010007222493489584m
-2021-01-30 17:54:24,790 Recovering variable...
-2021-01-30 17:54:24,797 Variable recovered. Time: 0.00011675357818603515m
-2021-01-30 17:54:24,797 Recovering variable...
-2021-01-30 17:54:24,806 Variable recovered. Time: 0.00015001296997070314m
-2021-01-30 17:54:24,806 Recovering variable...
-2021-01-30 17:54:24,815 Variable recovered. Time: 0.00015009641647338866m
-2021-01-30 17:54:24,815 Creating RWs...
-2021-01-30 17:54:24,839 Receiving results...
-2021-01-30 17:54:27,416 Iteration 0 executed.
-2021-01-30 17:54:27,417 Iteration 1 executed.
-2021-01-30 17:54:27,421 Iteration 2 executed.
-2021-01-30 17:54:27,427 Iteration 3 executed.
-2021-01-30 17:54:27,436 Iteration 4 executed.
-2021-01-30 17:54:27,694 RWs created. Time: 0.047983149687449135m
-2021-01-30 17:54:27,694 Saving Random Walks on disk...
-2021-01-30 17:54:27,699 Initializing creation of the representations...
-2021-01-30 17:54:27,699 collecting all words and their counts
-2021-01-30 17:54:27,699 {'uri': 'random_walks.txt', 'mode': 'rb', 'buffering': -1, 'encoding': None, 'errors': None, 'newline': None, 'closefd': True, 'opener': None, 'ignore_ext': False, 'transport_params': None}
-2021-01-30 17:54:27,713 PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
-2021-01-30 17:54:27,718 collected 131 word types from a corpus of 9825 raw words and 655 sentences
-2021-01-30 17:54:27,718 Loading a fresh vocabulary
-2021-01-30 17:54:27,718 effective_min_count=0 retains 131 unique words (100% of original 131, drops 0)
-2021-01-30 17:54:27,718 effective_min_count=0 leaves 9825 word corpus (100% of original 9825, drops 0)
-2021-01-30 17:54:27,719 deleting the raw counts dictionary of 131 items
-2021-01-30 17:54:27,719 sample=0.001 downsamples 127 most-common words
-2021-01-30 17:54:27,719 downsampling leaves estimated 4727 word corpus (48.1% of prior 9825)
-2021-01-30 17:54:27,720 constructing a huffman tree from 131 words
-2021-01-30 17:54:27,722 built huffman tree with maximum node depth 9
-2021-01-30 17:54:27,722 estimated required memory for 131 words and 128 dimensions: 292916 bytes
-2021-01-30 17:54:27,722 resetting layer weights
-2021-01-30 17:54:27,724 training model with 4 workers on 131 vocabulary and 128 features, using sg=1 hs=1 sample=0.001 negative=5 window=10
-2021-01-30 17:54:27,726 {'uri': 'random_walks.txt', 'mode': 'rb', 'buffering': -1, 'encoding': None, 'errors': None, 'newline': None, 'closefd': True, 'opener': None, 'ignore_ext': False, 'transport_params': None}
-2021-01-30 17:54:27,728 job loop exiting, total 1 jobs
-2021-01-30 17:54:27,731 worker exiting, processed 0 jobs
-2021-01-30 17:54:27,731 worker exiting, processed 0 jobs
-2021-01-30 17:54:27,731 worker exiting, processed 0 jobs
-2021-01-30 17:54:27,731 worker thread finished; awaiting finish of 3 more threads
-2021-01-30 17:54:27,732 worker thread finished; awaiting finish of 2 more threads
-2021-01-30 17:54:27,732 worker thread finished; awaiting finish of 1 more threads
-2021-01-30 17:54:27,776 worker exiting, processed 1 jobs
-2021-01-30 17:54:27,776 worker thread finished; awaiting finish of 0 more threads
-2021-01-30 17:54:27,777 EPOCH - 1 : training on 9825 raw words (4702 effective words) took 0.1s, 92732 effective words/s
-2021-01-30 17:54:27,779 {'uri': 'random_walks.txt', 'mode': 'rb', 'buffering': -1, 'encoding': None, 'errors': None, 'newline': None, 'closefd': True, 'opener': None, 'ignore_ext': False, 'transport_params': None}
-2021-01-30 17:54:27,781 job loop exiting, total 1 jobs
-2021-01-30 17:54:27,783 worker exiting, processed 0 jobs
-2021-01-30 17:54:27,783 worker exiting, processed 0 jobs
-2021-01-30 17:54:27,783 worker exiting, processed 0 jobs
-2021-01-30 17:54:27,783 worker thread finished; awaiting finish of 3 more threads
-2021-01-30 17:54:27,784 worker thread finished; awaiting finish of 2 more threads
-2021-01-30 17:54:27,784 worker thread finished; awaiting finish of 1 more threads
-2021-01-30 17:54:27,821 worker exiting, processed 1 jobs
-2021-01-30 17:54:27,821 worker thread finished; awaiting finish of 0 more threads
-2021-01-30 17:54:27,821 EPOCH - 2 : training on 9825 raw words (4796 effective words) took 0.0s, 112996 effective words/s
-2021-01-30 17:54:27,823 {'uri': 'random_walks.txt', 'mode': 'rb', 'buffering': -1, 'encoding': None, 'errors': None, 'newline': None, 'closefd': True, 'opener': None, 'ignore_ext': False, 'transport_params': None}
-2021-01-30 17:54:27,825 job loop exiting, total 1 jobs
-2021-01-30 17:54:27,827 worker exiting, processed 0 jobs
-2021-01-30 17:54:27,827 worker exiting, processed 0 jobs
-2021-01-30 17:54:27,828 worker exiting, processed 0 jobs
-2021-01-30 17:54:27,828 worker thread finished; awaiting finish of 3 more threads
-2021-01-30 17:54:27,829 worker thread finished; awaiting finish of 2 more threads
-2021-01-30 17:54:27,829 worker thread finished; awaiting finish of 1 more threads
-2021-01-30 17:54:27,869 worker exiting, processed 1 jobs
-2021-01-30 17:54:27,869 worker thread finished; awaiting finish of 0 more threads
-2021-01-30 17:54:27,870 EPOCH - 3 : training on 9825 raw words (4762 effective words) took 0.0s, 102136 effective words/s
-2021-01-30 17:54:27,872 {'uri': 'random_walks.txt', 'mode': 'rb', 'buffering': -1, 'encoding': None, 'errors': None, 'newline': None, 'closefd': True, 'opener': None, 'ignore_ext': False, 'transport_params': None}
-2021-01-30 17:54:27,875 job loop exiting, total 1 jobs
-2021-01-30 17:54:27,878 worker exiting, processed 0 jobs
-2021-01-30 17:54:27,878 worker exiting, processed 0 jobs
-2021-01-30 17:54:27,878 worker exiting, processed 0 jobs
-2021-01-30 17:54:27,878 worker thread finished; awaiting finish of 3 more threads
-2021-01-30 17:54:27,879 worker thread finished; awaiting finish of 2 more threads
-2021-01-30 17:54:27,879 worker thread finished; awaiting finish of 1 more threads
-2021-01-30 17:54:27,916 worker exiting, processed 1 jobs
-2021-01-30 17:54:27,917 worker thread finished; awaiting finish of 0 more threads
-2021-01-30 17:54:27,917 EPOCH - 4 : training on 9825 raw words (4680 effective words) took 0.0s, 104437 effective words/s
-2021-01-30 17:54:27,919 {'uri': 'random_walks.txt', 'mode': 'rb', 'buffering': -1, 'encoding': None, 'errors': None, 'newline': None, 'closefd': True, 'opener': None, 'ignore_ext': False, 'transport_params': None}
-2021-01-30 17:54:27,921 job loop exiting, total 1 jobs
-2021-01-30 17:54:27,923 worker exiting, processed 0 jobs
-2021-01-30 17:54:27,924 worker exiting, processed 0 jobs
-2021-01-30 17:54:27,924 worker exiting, processed 0 jobs
-2021-01-30 17:54:27,924 worker thread finished; awaiting finish of 3 more threads
-2021-01-30 17:54:27,925 worker thread finished; awaiting finish of 2 more threads
-2021-01-30 17:54:27,925 worker thread finished; awaiting finish of 1 more threads
-2021-01-30 17:54:27,958 worker exiting, processed 1 jobs
-2021-01-30 17:54:27,959 worker thread finished; awaiting finish of 0 more threads
-2021-01-30 17:54:27,959 EPOCH - 5 : training on 9825 raw words (4638 effective words) took 0.0s, 116222 effective words/s
-2021-01-30 17:54:27,959 training on a 49125 raw words (23578 effective words) took 0.2s, 100331 effective words/s
-2021-01-30 17:54:27,959 under 10 jobs per worker: consider setting a smaller `batch_words' for smoother alpha decay
-2021-01-30 17:54:27,959 storing 131x128 projection weights into emb/brazil-ripple-4.emb
-2021-01-30 17:54:27,959 {'uri': 'emb/brazil-ripple-4.emb', 'mode': 'wb', 'buffering': -1, 'encoding': None, 'errors': None, 'newline': None, 'closefd': True, 'opener': None, 'ignore_ext': False, 'transport_params': None}
-2021-01-30 17:54:27,973 Representations created.
+2021-02-01 11:42:10,889  - Loading graph...
+2021-02-01 11:42:10,960  - Graph loaded.
+2021-02-01 11:42:10,960  - Converting graph to dict...
+2021-02-01 11:42:10,961 Graph converted.
+2021-02-01 11:42:10,963 Graph - Number of vertices: 1190
+2021-02-01 11:42:10,963 Graph - Number of edges: 13599.0
+2021-02-01 11:42:41,618 Recovering variable...
+2021-02-01 11:42:41,632 Variable recovered. Time: 0.0002334435780843099m
+2021-02-01 11:42:41,633 Recovering variable...
+2021-02-01 11:42:41,635 Variable recovered. Time: 3.332694371541341e-05m
+2021-02-01 11:42:41,636 Executing sort part 1...
+2021-02-01 11:42:41,671 Executing sort part 2...
+2021-02-01 11:42:41,672 Executing sort part 3...
+2021-02-01 11:42:41,672 Executing sort part 4...
+2021-02-01 11:42:41,672 Receiving results of sort...
+2021-02-01 11:42:44,370 Part 1 Completed.
+2021-02-01 11:42:44,376 Part 2 Completed.
+2021-02-01 11:42:44,380 Part 4 Completed.
+2021-02-01 11:42:44,382 Part 3 Completed.
+2021-02-01 11:42:44,799 Executing sort part 1...
+2021-02-01 11:42:44,818 Executing sort part 2...
+2021-02-01 11:42:44,818 Executing sort part 3...
+2021-02-01 11:42:44,818 Executing sort part 4...
+2021-02-01 11:42:44,818 Receiving results of sort...
+2021-02-01 11:42:47,480 Part 1 Completed.
+2021-02-01 11:42:47,487 Part 2 Completed.
+2021-02-01 11:42:47,498 Part 4 Completed.
+2021-02-01 11:42:47,540 Part 3 Completed.
+2021-02-01 11:42:47,805 Executing sort part 1...
+2021-02-01 11:42:47,843 Executing sort part 2...
+2021-02-01 11:42:47,843 Executing sort part 3...
+2021-02-01 11:42:47,844 Executing sort part 4...
+2021-02-01 11:42:47,844 Receiving results of sort...

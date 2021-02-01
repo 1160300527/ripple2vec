@@ -217,7 +217,7 @@ def initLayer(layer,v,length,position):
 
 
 
-def findNeighborK_2(vertices,G,node_layer,sorted_hitting_time,hitting_map_list,part,max_layer,method):
+def TopKThreshold(vertices,G,node_layer,sorted_hitting_time,hitting_map_list,part,max_layer,method):
     distances =  dict()
     d = int(2 * math.log(len(G.keys()),2))+1
     for v in vertices:
@@ -233,7 +233,7 @@ def findNeighborK_2(vertices,G,node_layer,sorted_hitting_time,hitting_map_list,p
             layer = Layer(i,v,len(sorted_hitting_time[i]),pos,rVal)
             nbs_i = initScan(layer,count_scanned,D,sorted_hitting_time[i],d,max_layer,method)
             L.append(layer)
-            while(len(nbs_i.keys())<d):
+            while(len(nbs_i.keys())<d and  len(D.keys())<(i+1)*d):
                 flag = False
                 for j in range(len(L)):
                     l = L[j]
@@ -247,7 +247,7 @@ def findNeighborK_2(vertices,G,node_layer,sorted_hitting_time,hitting_map_list,p
                             D[u] = (algorithms_ripple(D[u][0],distance,j,max_layer,method),D[u][1]+1)
                         else:
                             D[u] = (algorithms_ripple(0,distance,j,max_layer,method),0)
-                        if(D[u][1]==i and u>v):
+                        if(D[u][1]==i):
                             nbs_i[u] = D[u][0]
                             if(len(nbs_i)>=d):
                                 break

@@ -11,7 +11,7 @@ from utils import *
 from algorithms import *
 from algorithms_distances import *
 import graph
-from topk import findNeighborK,findNeighborK_2
+from topk import findNeighborK
 
 
 class Graph():
@@ -62,7 +62,7 @@ class Graph():
 			if(self.method==2):
 				if(self.max_depth<100):
 					if(self.max_depth>1):
-						self.method = 100/float(self.max_depth-1)
+						self.method = 100/float(self.max_depth)
 					else:
 						self.method = 100
 
