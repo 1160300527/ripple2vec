@@ -286,8 +286,8 @@ def ThresholdTopk(vertices,G,node_layer,sorted_hitting_time,hitting_map_list,par
                 if(len(H)<1):
                     break
                 item = heappop(H)
-                if((v,item[1]) in distances)
-                        distances[v,item[1]][i] = item[0]
+                if((v,item[1]) in distances):
+                    distances[v,item[1]][i] = item[0]
                 else:
                     distances[v,item[1]] = {i:item[0]}
             # else:
