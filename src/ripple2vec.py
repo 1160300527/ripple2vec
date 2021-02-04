@@ -11,7 +11,7 @@ from utils import *
 from algorithms import *
 from algorithms_distances import *
 import graph
-from topk import findNeighborK
+from topk import ThresholdTopk
 
 
 class Graph():
@@ -148,8 +148,7 @@ class Graph():
 			part = 1
 			for c in chunks:
 				logging.info("Executing sort part {}...".format(part))
-				job = executor.submit(findNeighborK,c,self.G,self.node_layer,sorted_hitting_list,hitting_map_list,part,self.max_depth,self.method)
-				#job = executor.submit(findNeighborK_2,c,self.G,self.node_layer,sorted_hitting_list,hitting_map_list,part,self.max_depth)
+				job = executor.submit(ThresholdTopk,c,self.G,self.node_layer,sorted_hitting_list,hitting_map_list,part,self.max_depth,self.method)
 				futures[job] = part
 				part += 1
 

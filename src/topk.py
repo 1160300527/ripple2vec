@@ -217,7 +217,7 @@ def initLayer(layer,v,length,position):
 
 
 
-def TopKThreshold(vertices,G,node_layer,sorted_hitting_time,hitting_map_list,part,max_layer,method):
+def ThresholdTopk(vertices,G,node_layer,sorted_hitting_time,hitting_map_list,part,max_layer,method):
     distances =  dict()
     d = int(2 * math.log(len(G.keys()),2))+1
     for v in vertices:
@@ -258,44 +258,45 @@ def TopKThreshold(vertices,G,node_layer,sorted_hitting_time,hitting_map_list,par
                 else:
                     count_scanned+=1
             
-            if(len(nbs_i)>=d):
-                H = []
-                for node in D.keys():
-                    if(node<=v):
-                        continue
-                    dis = 0
-                    if(D[node][1]==i):
-                        dis = D[node][0]
-                    else:
-                        for j in range(i+1):
-                            hitting_time_v1 = sorted_hitting_time[j][hitting_map_list[j][v]][1]
-                            if(node_layer[node]<=j):
-                                hitting_time_v2 = 0
-                            else:
-                                hitting_time_v2 = sorted_hitting_time[j][hitting_map_list[j][node]][1]
-                            if(hitting_time_v1 > hitting_time_v2):
-                                Max = hitting_time_v1
-                                Min = hitting_time_v2
-                            else:
-                                Max = hitting_time_v2
-                                Min = hitting_time_v1
-                            if(Max>0):
-                                #distance = distance+(float(Max)/Min)-1
-                                dis = algorithms_ripple(dis,(1-float(Min)/Max),j,max_layer,method)
-                    heappush(H,(dis,node))
-                for j in range(d):
-                    item = heappop(H)
-                    if((v,item[1]) in distances):
-                            distances[v,item[1]][i] = item[0]
-                    else:
-                        distances[v,item[1]] = {i:item[0]}
-            else:
-                for u in nbs_i.keys():
-                    distance = nbs_i[u]
-                    if((v,u) in distances):
-                        distances[v,u][i] = distance
-                    else:
-                        distances[v,u] = {i:distance}
+            # if(len(nbs_i)>=d):
+            H = []
+            for node in D.keys():
+    
+                dis = 0
+                if(D[node][1]==i):
+                    dis = D[node][0]
+                else:
+                    for j in range(i+1):
+                        hitting_time_v1 = sorted_hitting_time[j][hitting_map_list[j][v]][1]
+                        if(node_layer[node]<=j):
+                            hitting_time_v2 = 0
+                        else:
+                            hitting_time_v2 = sorted_hitting_time[j][hitting_map_list[j][node]][1]
+                        if(hitting_time_v1 > hitting_time_v2):
+                            Max = hitting_time_v1
+                            Min = hitting_time_v2
+                        else:
+                            Max = hitting_time_v2
+                            Min = hitting_time_v1
+                        if(Max>0):
+                            #distance = distance+(float(Max)/Min)-1
+                            dis = algorithms_ripple(dis,(1-float(Min)/Max),j,max_layer,method)
+                heappush(H,(dis,node))
+            for j in range(d):
+                if(len(H)<1):
+                    break
+                item = heappop(H)
+                if((v,item[1]) in distances)
+                        distances[v,item[1]][i] = item[0]
+                else:
+                    distances[v,item[1]] = {i:item[0]}
+            # else:
+            #     for u in nbs_i.keys():
+            #         distance = nbs_i[u]
+            #         if((v,u) in distances):
+            #             distances[v,u][i] = distance
+            #         else:
+            #             distances[v,u] = {i:distance}
     saveVariableOnDisk(distances,"distances-"+str(part))
 
                         
